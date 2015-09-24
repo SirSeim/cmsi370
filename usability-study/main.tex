@@ -1,0 +1,208 @@
+\documentclass[12pt,letterpaper]{article}
+%sets the paper's header
+\newcommand{\sethead}[6]{
+    \lhead{\textit{#1}}
+    \rhead{#2\\#3\\#4\\#5\\#6}
+}
+
+%Imports
+
+\usepackage[utf8]{inputenc}
+%headings
+\usepackage{fancyhdr}
+%double-space
+\usepackage{setspace}
+%variable margins
+\usepackage{geometry}
+%make the margins a bit less ridiculous
+\newgeometry{top=1in,bottom=1.5in,left=1in,right=1in}
+%images
+\usepackage{graphicx}
+\pagestyle{fancy}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+
+\title{Interaction Design Usability Study}
+\author{Edward Seim (and group members Lauren K., Joshua K., and Adrian Lu)}
+
+\begin{document}
+    \maketitle
+    
+    \section{Introduction}
+    \label{Introduction}
+
+    Our usability study focused on the reading experiences brought by iBooks and Kindle on the iOS platform. 
+\end{document}
+
+
+
+% \begin{document}
+%     %ragged right with paragraph indents
+%     \newlength{\saveparindent}
+%     \setlength{\saveparindent}{\parindent}
+%     \raggedright
+%     \setlength{\parindent}{\saveparindent}
+    
+%     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     %%     I   M   P   O   R   T   A   N   T   :      %%
+%     %%  please remember to set the header to reflect  %%
+%     %%      the class that you're writing for!        %%
+%     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     \sethead{Homework 4}{Joshua Kuroda, Jenny Miller}{Edward Seim, Adrian Lu}{CMSI 282}{Toal}{04/30/15}
+    
+%     %spacing
+%     \doublespacing
+%     \begin{center}
+%         %necessary spacing between the header and the body
+%     \end{center}
+    
+%     $ \: $
+%     \begin{enumerate}
+    
+%     %1
+%     \item
+%     See table below.
+%     \begin{table}[h]
+%     \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+%       \hline
+%       \multicolumn{1}{|l|}{} & \multicolumn{8}{c|}{Iteration}                                \\ \hline
+%       Node                   & 0        & 1        & 2        & 3        & 4  & 5  & 6  & 7  \\ \hline
+%       A                      & $\infty$ & 7        & 7        & 7        & 7  & 7  & 7  & 7  \\ \cline{1-1}
+%       B                      & $\infty$ & $\infty$ & 11       & 11       & 11 & 11 & 11 & 11 \\ \cline{1-1}
+%       C                      & $\infty$ & 6        & 5        & 5        & 5  & 5  & 5  & 5  \\ \cline{1-1}
+%       D                      & $\infty$ & $\infty$ & 8        & 7        & 7  & 7  & 7  & 7  \\ \cline{1-1}
+%       E                      & $\infty$ & 6        & 6        & 6        & 6  & 6  & 6  & 6  \\ \cline{1-1}
+%       F                      & $\infty$ & 5        & 4        & 4        & 4  & 4  & 4  & 4  \\ \cline{1-1}
+%       G                      & $\infty$ & $\infty$ & $\infty$ & 2        & 1  & 1  & 1  & 1  \\ \cline{1-1}
+%       H                      & $\infty$ & $\infty$ & 9        & 7        & 7  & 7  & 7  & 7  \\ \cline{1-1}
+%       I                      & $\infty$ & $\infty$ & $\infty$ & $\infty$ & 8  & 7  & 7  & 7  \\ \cline{1-1}
+%       S                      & 0        & 0        & 0        & 0        & 0  & 0  & 0  & 0  \\ \hline
+%     \end{tabular}
+%     \end{table}
+    
+%     %2
+%     \item
+    
+%     Professor F. Lake is wrong! This is not a valid method. Adding an appropriate constant to each edge weight so that all weights become positive can change an inherent quality of the graph. Take this counter-example:
+%     %counter-example goes here
+%     \newline
+%     \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3cm,
+%   thick,main node/.style={circle,fill=green!20,draw,font=\sffamily\Large\bfseries}]
+
+%     \node[main node] (T) {T};
+%     \node[main node] (S) [left of=T] {S};
+
+%     \path[every node/.style={font=\sffamily\small}]
+%     (T) edge [bend right] node[above] {-1} (S)
+%     (S) edge [bend right] node[below] {-1} (T);
+%     \end{tikzpicture}
+
+%     \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=3cm,
+%       thick,main node/.style={circle,fill=blue!20,draw,font=\sffamily\Large\bfseries}]
+
+%       \node[main node] (T) {T};
+%       \node[main node] (S) [left of=T] {S};
+
+%       \path[every node/.style={font=\sffamily\small}]
+%         (T) edge [bend right] node[above] {1} (S)
+%         (S) edge [bend right] node[below] {1} (T);
+%     \end{tikzpicture}
+%     \newline
+%     Suppose we added a constant 2 to each edge weight so all edges became positive, the shortest path from $s$ to $t$ in the new graph would be $s$ $\rightarrow$ $t$ with weight 1, using Dijkstra’s algorithm. However, in the original graph, the shortest path from $s$ to $t$ doesn’t exist. (Credit: CS Pomona)
+%     %3
+%     \item
+    
+%     By definition, Big-O of Dijkstra’s algorithm $O((|V| + |E|) log W )$.  Using Dial's implementation, we have a maximum edge weight of W and a vertex can be updated at most $|V| - 1$ times, we get a bound of $O(W|V|)$. Reincorporating this into Dijkstra's algorithm, we achieve a bound of $O(W |V | + |E|)$.
+    
+%     %4
+%     \item
+%       \begin{enumerate}
+%       \item
+%       See table below.
+%         \begin{table}[h]
+%         \begin{tabular}{ccccccccc}
+%         \multicolumn{9}{c}{Intermediate Values of the Cost Array}                                                                                                                                                                                                                                                            \\ \hline
+%         \multicolumn{1}{|c|}{Set S}                   & \multicolumn{1}{c|}{A} & \multicolumn{1}{c|}{B}          & \multicolumn{1}{c|}{C}          & \multicolumn{1}{c|}{D}          & \multicolumn{1}{c|}{E}          & \multicolumn{1}{c|}{F}          & \multicolumn{1}{c|}{G}          & \multicolumn{1}{c|}{H}          \\ \hline
+%         \multicolumn{1}{|c|}{\{A\}}                   & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{\textbf{1}} & \multicolumn{1}{c|}{$\infty$}   & \multicolumn{1}{c|}{$\infty$}   & \multicolumn{1}{c|}{4}          & \multicolumn{1}{c|}{8}          & \multicolumn{1}{c|}{$\infty$}   & \multicolumn{1}{c|}{$\infty$}   \\ \hline
+%         \multicolumn{1}{|c|}{\{A, B\}}                & \multicolumn{1}{c|}{}  & \multicolumn{1}{c|}{}           & \multicolumn{1}{c|}{\textbf{2}} & \multicolumn{1}{c|}{$\infty$}   & \multicolumn{1}{c|}{4}          & \multicolumn{1}{c|}{6}          & \multicolumn{1}{c|}{6}          & \multicolumn{1}{c|}{$\infty$}   \\ \hline
+%         \multicolumn{1}{|c|}{\{A, B, C\}}             & \multicolumn{1}{c|}{}  & \multicolumn{1}{c|}{}           & \multicolumn{1}{c|}{}           & \multicolumn{1}{c|}{3}          & \multicolumn{1}{c|}{4}          & \multicolumn{1}{c|}{6}          & \multicolumn{1}{c|}{\textbf{2}} & \multicolumn{1}{c|}{$\infty$}   \\ \hline
+%         \multicolumn{1}{|c|}{\{A, B, C, G\}}          & \multicolumn{1}{c|}{}  & \multicolumn{1}{c|}{}           & \multicolumn{1}{c|}{}           & \multicolumn{1}{c|}{\textbf{1}} & \multicolumn{1}{c|}{4}          & \multicolumn{1}{c|}{1}          & \multicolumn{1}{c|}{}           & \multicolumn{1}{c|}{1}          \\ \hline
+%         \multicolumn{1}{|c|}{\{A, B, C, G, D\}}       & \multicolumn{1}{c|}{}  & \multicolumn{1}{c|}{}           & \multicolumn{1}{c|}{}           & \multicolumn{1}{c|}{}           & \multicolumn{1}{c|}{4}          & \multicolumn{1}{c|}{\textbf{1}} & \multicolumn{1}{c|}{}           & \multicolumn{1}{c|}{1}          \\ \hline
+%         \multicolumn{1}{|c|}{\{A, B, C, G, D, F\}}    & \multicolumn{1}{c|}{}  & \multicolumn{1}{c|}{}           & \multicolumn{1}{c|}{}           & \multicolumn{1}{c|}{}           & \multicolumn{1}{c|}{4}          & \multicolumn{1}{c|}{}           & \multicolumn{1}{c|}{}           & \multicolumn{1}{c|}{\textbf{1}} \\ \hline
+%         \multicolumn{1}{|c|}{\{A, B, C, G, D, F, H\}} & \multicolumn{1}{c|}{}  & \multicolumn{1}{c|}{}           & \multicolumn{1}{c|}{}           & \multicolumn{1}{c|}{}           & \multicolumn{1}{c|}{\textbf{4}} & \multicolumn{1}{c|}{}           & \multicolumn{1}{c|}{}           & \multicolumn{1}{c|}{}           \\ \hline
+%         \end{tabular}
+%         \end{table}
+      
+%       \item
+%         Running Kruskal's Algorithm requires us to first order the edges in the graph by increasing weight ((x, y): w means that the edge (x, y) has weight w): 
+%         \newline
+%         \{(A, B): 1, (D, G): 1, (F, G): 1, (H, G): 1, (B, C): 2, (C, G): 2, (C, D): 3, (A,~E): 4, (D, H): 4, (E, F): 5, (B, F): 6, (B, G): 6, (A, F): 8\}
+%         \newline
+%         Now loop over the ordered edges:
+%         \newline
+%         (A, B) \newline
+%         data structure: ({$A^{0}$, $B^{1}$}, {A$\rightarrow$B}) \newline
+
+%         (D, G) \newline
+%         data structure: ({$A^{0}$, $B^{1}$, $D^{0}$, $G^{1}$}, {A$\rightarrow$B, D$\rightarrow$G}) \newline
+        
+%         (F, G) \newline
+%         data structure: ({$A^{0}$, $B^{1}$, $D^{0}$, $F^{0}$, $G^{1}$}, {A$\rightarrow$B, D$\rightarrow$G, F$\rightarrow$G}) \newline
+
+%         (H, G) \newline
+%         data structure: ({$A^{0}$, $B^{1}$, $D^{0}$, $F^{0}$, $H^{0}$, $G^{1}$}, {A$\rightarrow$B, D$\rightarrow$G, F$\rightarrow$G, H$\rightarrow$G}) \newline
+
+%         (B, C) \newline
+%         data structure: ({$A^{0}$, $C^{0}$, $B^{1}$, $D^{0}$, $F^{0}$, $H^{0}$, $G^{1}$}, {A$\rightarrow$B, C$\rightarrow$B, D$\rightarrow$G, F$\rightarrow$G, H$\rightarrow$G}) \newline
+
+%         (C, G) \newline
+%         data structure: ({$A^{0}$, $C^{0}$, $B^{1}$, $D^{0}$, $F^{0}$, $H^{0}$, $G^{2}$}, {A$\rightarrow$B, C$\rightarrow$B, D$\rightarrow$G, F$\rightarrow$G, H$\rightarrow$G, B$\rightarrow$G}) \newline
+
+%         (C, D) \newline
+%         data structure: ({$A^{0}$, $C^{0}$, $D^{0}$, $F^{0}$, $H^{0}$, $B^{1}$, $G^{2}$}, {A$\rightarrow$B, C$\rightarrow$G, D$\rightarrow$G, F$\rightarrow$G, H$\rightarrow$G, B$\rightarrow$G}) \newline
+
+%         (A, E) \newline
+%         data structure: ({$A^{0}$, $C^{0}$, $D^{0}$, $F^{0}$, $H^{0}$, $E^{0}$, $B^{1}$, $G^{2}$}, {A$\rightarrow$B, C$\rightarrow$G, D$\rightarrow$G, F$\rightarrow$G, H$\rightarrow$G, B$\rightarrow$G, E$\rightarrow$G}) \newline
+
+%         (D, H), (E, F), (B, F), (B, G), (A, F) \newline
+%         data structure: ({$A^{0}$, $C^{0}$, $D^{0}$, $F^{0}$, $H^{0}$, $E^{0}$, $B^{1}$, $G^{2}$}, {A$\rightarrow$G, C$\rightarrow$G, D$\rightarrow$G, F$\rightarrow$G, H$\rightarrow$G, B$\rightarrow$G, E$\rightarrow$G}) \newline
+%       \end{enumerate}
+%     %5
+%     \item 
+%         Function is in file sum\_checker.py
+    
+%     %6
+%     \item
+%         Solver is in file KirkmanSolver.java
+        
+%     \end{enumerate}
+% \end{document}
+
+
+
+
+
+
+
+
+% %basic graph with nodes and arrows:
+% \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2cm,
+%     thin,main node/.style={circle,fill=blue!20,draw,font=\sffamily\Large\bfseries}]
+
+% \node[main node] (1) {1};
+% \node[main node] (2) [right of=1] {2};
+% \node[main node] (3) [right of=2] {3};
+% \node[main node] (4) [right of=3] {4};
+% \node[main node] (5) [below of=1] {5};
+% \node[main node] (6) [below of=2] {6};
+% \node[main node] (7) [below of=3] {7};
+% \node[main node] (8) [below of=4] {8};
+
+% \path[every node/.style={font=\sffamily\small}]
+% (1) edge [bend right] (2)
+% (2) edge [bend right] (3)
+% (1) edge [bend left=60] (8);
+
+% \end{tikzpicture}
