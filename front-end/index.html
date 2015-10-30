@@ -1,12 +1,29 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></link>
+
+    <title>TwitchTV Front End</title>
+  </head>
+  <body class="container">
+    <div class="row">
+      <div class="col-xs-6">
+        <h3>current status:</h3>
+        <p id="status"></p>
+      </div>
+      <div class="col-xs-6">
+        <img src="http://ttv-api.s3.amazonaws.com/assets/connect_light.png" id="twitch-connect" href="#">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="twitch_embed_player"></div>
+      </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://ttv-api.s3.amazonaws.com/twitch.min.js"></script>
-  </head>
-  <body>
-
-
     <script src="content.js"></script>
   </body>
 </html>
