@@ -5,11 +5,17 @@ $(function() {
         if (status.authenticated) {
             // we're logged in :)
             $('#status').text('Logged in! Allowed scope: ' + status.scope);
+            $('#twitch-connect').hide();
+            $('#logout').show();
             // Show the data for logged-in users
         } else {
             $('#status').text('Not Logged in! Better connect with Twitch!');
+            $('#logout').hide();
+            $('#twitch-connect').show();
             // Show the twitch connect button
         }
+        console.log(error);
+        console.log(status);
     });
 
     $('#twitch-connect').click(function() {
@@ -18,23 +24,28 @@ $(function() {
         });
     });
 
+    $('#logout button').click(function() {
+        Twitch.logout();
+        window.location = window.location.pathname;
+    })
 
 
-    window.onPlayerEvent = function (data) {
-        data.forEach(function(event) {
-            if (event.event == "playerInit") {
-                var player = $("#twitch_embed_player")[0];
-                player.playVideo();
-                player.mute();
-            }
-        });
-    }
 
-    swfobject.embedSWF("//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf", "twitch_embed_player", "640", "400", "11", null,
-        { "eventsCallback":"onPlayerEvent",
-            "embed":1,
-            "channel":"day9tv",
-            "auto_play":"true"},
-            { "allowScriptAccess":"always",
-                "allowFullScreen":"true"});
+    // window.onPlayerEvent = function (data) {
+    //     data.forEach(function(event) {
+    //         if (event.event == "playerInit") {
+    //             var player = $("#twitch_embed_player")[0];
+    //             player.playVideo();
+    //             player.mute();
+    //         }
+    //     });
+    // }
+
+    // swfobject.embedSWF("//www-cdn.jtvnw.net/swflibs/TwitchPlayer.swf", "twitch_embed_player", "640", "400", "11", null,
+    //     { "eventsCallback":"onPlayerEvent",
+    //         "embed":1,
+    //         "channel":"day9tv",
+    //         "auto_play":"true"},
+    //         { "allowScriptAccess":"always",
+    //             "allowFullScreen":"true"});
 });

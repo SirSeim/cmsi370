@@ -12,7 +12,12 @@
         <p id="status"></p>
       </div>
       <div class="col-xs-6">
-        <img src="http://ttv-api.s3.amazonaws.com/assets/connect_light.png" id="twitch-connect" href="#">
+        <div id="twitch-connect">
+          <img src="http://ttv-api.s3.amazonaws.com/assets/connect_light.png" href="#">
+        </div>
+        <div id="logout">
+          <button type="logout" class="btn btn-default">Log Out</button>
+        </div>
       </div>
     </div>
 
@@ -24,6 +29,7 @@
 
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://ttv-api.s3.amazonaws.com/twitch.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="content.js"></script>
   </body>
 </html>
