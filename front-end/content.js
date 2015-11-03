@@ -1,17 +1,28 @@
 $(function() {
     // alert("Hey");
+
+    var create_alert = function(text, alert_type){
+        // alert_type can be 'alert-success' 'alert-info' 'alert-warning' 'alert-danger'
+        var html_content = '<div class="alert '+alert_type+' alert-dismissible" role="alert">' +
+        '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
+        text +
+        '</div>';
+        $('#alert-area').append(html_content);
+    };
+
+
     window.CLIENT_ID = 'n5t974xr5w5tw69lv8roafnqmmh49wt';
     Twitch.init({clientId: CLIENT_ID}, function(error, status) {
         if (status.authenticated) {
             // we're logged in :)
-            $('#status').text('Logged in! Allowed scope: ' + status.scope);
             $('#twitch-connect').hide();
             $('#logout').show();
+            create_alert('<strong>Logged in!</strong>', 'alert-success');
             // Show the data for logged-in users
         } else {
-            $('#status').text('Not Logged in! Better connect with Twitch!');
             $('#logout').hide();
             $('#twitch-connect').show();
+            create_alert('<strong>Not Logged in!</strong>', 'alert-danger');
             // Show the twitch connect button
         }
         console.log(error);

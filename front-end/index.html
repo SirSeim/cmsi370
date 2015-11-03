@@ -2,23 +2,33 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></link>
+    <link rel="stylesheet" href="content.css"></link>
 
     <title>TwitchTV Front End</title>
   </head>
   <body class="container">
+
+    <div id="alert-area"></div>
+
+
     <div class="row">
-      <div class="col-xs-6">
-        <h3>current status:</h3>
-        <p id="status"></p>
-      </div>
-      <div class="col-xs-6">
-        <div id="twitch-connect">
-          <img src="http://ttv-api.s3.amazonaws.com/assets/connect_light.png" href="#">
+
+      <div class="col-sm-6">
+        <h3>TwitchTV Front End</h3>
+        <div class="login-logout">
+          <div id="twitch-connect">
+            <img src="http://ttv-api.s3.amazonaws.com/assets/connect_light.png" href="#">
+          </div>
+          <div id="logout">
+            <button type="logout" class="btn btn-default">Log Out</button>
+          </div>
         </div>
-        <div id="logout">
-          <button type="logout" class="btn btn-default">Log Out</button>
-        </div>
       </div>
+
+      <div class="col-sm-6">
+        
+      </div>
+      
     </div>
 
     <div class="row">
