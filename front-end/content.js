@@ -49,16 +49,20 @@ $(function() {
         if (status.authenticated) {
             // we're logged in :)
             $('#twitch-connect').hide();
-            $('#logout').show();
+            $('.logout').show();
             $('.user-data').show();
+            $('.logged-out').hide();
+            $('.logged-in').show();
             create_alert('<strong>Logged in!</strong>', 'alert-success');
             fill_profile();
             fill_user_data();
             // Show the data for logged-in users
         } else {
-            $('#logout').hide();
+            $('.logout').hide();
             $('#twitch-connect').show();
             $('.user-data').hide();
+            $('.logged-out').show();
+            $('.logged-in').hide();
             create_alert('<strong>Not Logged in!</strong>', 'alert-danger');
             // Show the twitch connect button
         }
@@ -72,7 +76,7 @@ $(function() {
         });
     });
 
-    $('#logout button').click(function() {
+    $('#logout').click(function() {
         Twitch.logout();
         window.location = window.location.pathname;
     })

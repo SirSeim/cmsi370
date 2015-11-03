@@ -6,61 +6,76 @@
 
     <title>TwitchTV Front End</title>
   </head>
-  <body class="container">
+  <body>
 
-    <div id="alert-area"></div>
-
-
-    <div class="row">
-
-      <div class="col-sm-6">
-        <h3>TwitchTV Front End</h3>
-
-        <div class="profile text-center"></div>
-
-
-        <div class="login-logout">
-          <div id="twitch-connect">
-            <img src="http://ttv-api.s3.amazonaws.com/assets/connect_light.png" href="#">
-          </div>
-          <div id="logout">
-            <button type="logout" class="btn btn-default">Log Out</button>
-          </div>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">TwitchTV</a>
         </div>
-      </div>
 
-      <div class="col-sm-6">
-        <div class="user-data">
-          <!-- Nav tabs -->
-          <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#info" aria-controls="info" role="tab" data-toggle="tab">Info</a></li>
-            <li role="presentation"><a href="#key" aria-controls="key" role="tab" data-toggle="tab">Stream Key</a></li>
-            <!-- <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
-            <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li> -->
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+
+                <!-- logged-in menu items -->
+                <li class="logged-in"><a href="#">Profile</a></li>
+                <li class="logged-in"><a href="#">Subscriptions</a></li>
+                <li role="separator" class="divider logged-in"></li>
+                <li class="logged-in"><a type="logout" id="logout">Logout</a></li>
+
+                <!-- logged-out menu items -->
+                <li class="logged-out"><img src="http://ttv-api.s3.amazonaws.com/assets/connect_light.png" href="#" id="twitch-connect"></li>
+              </ul>
+            </li>
           </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
 
-          <!-- Tab panes -->
-          <div class="tab-content user-data-content">
-            <div role="tabpanel" class="tab-pane active" id="info">
-              <p id="username">Username: </p>
-              <p id="email">Email: </p>
-              <p id="followers">Followers: </p>
-              <p id="views">Views: </p>
+    <div class="body-content">
+      <div id="alert-area"></div>
+
+      <div class="row">
+        <div class="col-sm-6">
+
+          <div class="profile text-center"></div>
+
+        </div>
+
+        <div class="col-sm-6">
+          <div class="user-data">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active"><a href="#info" aria-controls="info" role="tab" data-toggle="tab">Info</a></li>
+              <li role="presentation"><a href="#key" aria-controls="key" role="tab" data-toggle="tab">Stream Key</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content user-data-content">
+              <div role="tabpanel" class="tab-pane active" id="info">
+                <p id="username">Username: </p>
+                <p id="email">Email: </p>
+                <p id="followers">Followers: </p>
+                <p id="views">Views: </p>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="key">
+                <p id="stream-key">Stream Key: </p>
+              </div>
             </div>
-            <div role="tabpanel" class="tab-pane" id="key">
-              <p id="stream-key">Stream Key: </p>
-            </div>
-            <!-- <div role="tabpanel" class="tab-pane" id="messages">...</div>
-            <div role="tabpanel" class="tab-pane" id="settings">...</div> -->
           </div>
         </div>
-      </div>
 
-    </div>
-
-    <div class="row">
-      <div class="col-xs-12">
-        <div id="twitch_embed_player"></div>
       </div>
     </div>
 
