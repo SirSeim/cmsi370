@@ -13,7 +13,7 @@ $(function() {
     fill_profile = function(){
         Twitch.api({method: 'user'}, function(err, res){
             if(err) {
-                console.log('fill_profile error');
+                create_alert('fill_profile error', 'alert-danger');
                 console.log(err);
             } else {
                 console.log('fill_profile success');
@@ -29,11 +29,11 @@ $(function() {
     fill_user_data = function(){
         Twitch.api({method: 'channel'}, function(err, res){
             if (err) {
-                console.log('fill_user_data error');
+                create_alert('fill_user_data error', 'alert-danger');
                 console.log(err);
             } else {
                 console.log('fill_user_data success');
-                console.log(res);
+                // console.log(res);
                 $('.user-data-content #username').text('Username: '+res.name);
                 $('.user-data-content #email').text('Email: '+res.email);
                 $('.user-data-content #followers').text('Followers: '+res.followers);
@@ -79,7 +79,15 @@ $(function() {
     $('#logout').click(function() {
         Twitch.logout();
         window.location = window.location.pathname;
-    })
+    });
+
+    $('#view-profile').click(function() {
+        create_alert('<strong>View Profile not implemented.</strong> Contact <a href="https://www.twitter.com/sirseim">@SirSeim</a> to finish it.', 'alert-danger');
+    });
+
+    $('#view-subscriptions').click(function() {
+        create_alert('<strong>View Subscriptions not implemented.</strong> Contact <a href="https://www.twitter.com/sirseim">@SirSeim</a> to finish it.', 'alert-danger');
+    });
 
 
 
