@@ -10,6 +10,39 @@ $(function() {
         $('#alert-area').append(html_content);
     };
 
+    fill_profile = function(){
+        Twitch.api({method: 'user'}, function(err, res){
+            if(err) {
+                console.log('fill_profile error');
+                console.log(err);
+            } else {
+                console.log('fill_profile success');
+                // console.log(res);
+
+                var html_content = '<img src="'+res.logo+'" alt="Logo" class="img-responsive">' +
+                    '<h4>'+res.display_name+'</h4>';
+                $('.profile').html(html_content);
+            }
+        });
+    };
+
+    fill_user_data = function(){
+        Twitch.api({method: 'channel'}, function(err, res){
+            if (err) {
+                console.log('fill_user_data error');
+                console.log(err);
+            } else {
+                console.log('fill_user_data success');
+                console.log(res);
+                $('.user-data-content #username').text('Username: '+res.name);
+                $('.user-data-content #email').text('Email: '+res.email);
+                $('.user-data-content #followers').text('Followers: '+res.followers);
+                $('.user-data-content #views').text('Views: '+res.views);
+                $('.user-data-content #stream-key').text('Stream Key: '+res.stream_key);
+            }
+        });
+    };
+
 
     window.CLIENT_ID = 'n5t974xr5w5tw69lv8roafnqmmh49wt';
     Twitch.init({clientId: CLIENT_ID}, function(error, status) {
@@ -17,11 +50,15 @@ $(function() {
             // we're logged in :)
             $('#twitch-connect').hide();
             $('#logout').show();
+            $('.user-data').show();
             create_alert('<strong>Logged in!</strong>', 'alert-success');
+            fill_profile();
+            fill_user_data();
             // Show the data for logged-in users
         } else {
             $('#logout').hide();
             $('#twitch-connect').show();
+            $('.user-data').hide();
             create_alert('<strong>Not Logged in!</strong>', 'alert-danger');
             // Show the twitch connect button
         }
