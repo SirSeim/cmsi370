@@ -9,3 +9,8 @@
 .profile img{
     margin: auto;
 }
+
+p {
+    padding: 0 5px;
+    margin: 10px 0;
+}
