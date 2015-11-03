@@ -2,6 +2,10 @@
     margin: 10px 0px;
 }
 
-.login-logout {
-    margin: 15px 0px;
+.login-logout button{
+    margin: 15px auto;
+}
+
+.profile img{
+    margin: auto;
 }
