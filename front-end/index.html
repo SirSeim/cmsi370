@@ -12,6 +12,7 @@
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
+          <!-- JD: 2, 3 -->
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
@@ -22,19 +23,20 @@
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> <!-- JD: 3 -->
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
+              <!-- JD: 2 -->
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
               <ul class="dropdown-menu">
 
-                <!-- logged-in menu items -->
+                <!-- logged-in menu items --> <!-- JD: 4 -->
                 <li class="logged-in"><a href="#" id="view-profile">Profile</a></li>
                 <li class="logged-in"><a href="#" id="view-subscriptions">Subscriptions</a></li>
                 <li role="separator" class="divider logged-in"></li>
                 <li class="logged-in"><a type="logout" id="logout">Logout</a></li>
 
-                <!-- logged-out menu items -->
+                <!-- logged-out menu items --> <!-- JD: 4 -->
                 <li class="logged-out"><img src="http://ttv-api.s3.amazonaws.com/assets/connect_light.png" href="#" id="twitch-connect"></li>
               </ul>
             </li>
@@ -43,7 +45,7 @@
       </div><!-- /.container-fluid -->
     </nav>
 
-    <div class="body-content">
+    <div class="body-content"> <!-- JD: 5 -->
       <div id="alert-area"></div>
 
       <div class="row">
@@ -55,22 +57,22 @@
 
         <div class="col-sm-6">
           <div class="user-data">
-            <!-- Nav tabs -->
+            <!-- Nav tabs --> <!-- JD: 4 -->
             <ul class="nav nav-tabs" role="tablist">
               <li role="presentation" class="active"><a href="#info" aria-controls="info" role="tab" data-toggle="tab">Info</a></li>
               <li role="presentation"><a href="#key" aria-controls="key" role="tab" data-toggle="tab">Stream Key</a></li>
             </ul>
 
-            <!-- Tab panes -->
+            <!-- Tab panes --> <!-- JD: 4 -->
             <div class="tab-content user-data-content">
               <div role="tabpanel" class="tab-pane active" id="info">
-                <p id="username">Username: </p>
+                <p id="username">Username: </p> <!-- JD: 6 -->
                 <p id="email">Email: </p>
                 <p id="followers">Followers: </p>
                 <p id="views">Views: </p>
               </div>
               <div role="tabpanel" class="tab-pane" id="key">
-                <p id="stream-key">Stream Key: </p>
+                <p id="stream-key">Stream Key: </p> <!-- JD: 7 -->
               </div>
             </div>
           </div>
