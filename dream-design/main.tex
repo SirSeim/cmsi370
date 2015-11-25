@@ -33,7 +33,7 @@
 
     As an avid advocate of the Pebble Watch, the main thing that dissappoints me about the Apple Watch is the simplicity that is lost by bringing the complexity of iPhone apps to the watch screen. The root of this problem is the use of the touchscreen. As a Pebble user, which has only buttons to use the device with, it makes it possible to use the watch with minimal thought and once you've used it for a while, you can eve perform tasks without looking at it. My goal with my improved Apple Watch interface is to minimize use of the touchscreen to only when its eseential.
 
-    \begin{figure}[h]
+    \begin{figure}[htbp]
         \centering
         \includegraphics[width=10cm,height=10cm,keepaspectratio]{apple-watch}
         \caption{Apple Watch}
@@ -45,10 +45,48 @@
 
     Without any change to the hardware, the Apple Watch has the neccesary buttons to emulate a Pebble type simplicity. using the Digital crown as a select and scrolling mechanism, and the side button as the back button, you have the same capabilities as the Pebble Watch, with the advantage of the touchscreen for specific uses and the better screen to display better eye candy.
 
-    The most important change to the overall design of the interface is the change over to a menu type system. This means that the root level is the watch face. Hitting the Digital Crown will go into the main menu. Scrolling on this top menu will show the various different apps that you want use, for example the messaging or music apps. Hitting the back button will take you up a level in the menus. As a general principle, when there is content on the screen and scrolling lets you see more content while hitting the crown gives you the actions that can be performed in that context with that content. The actions will be sorted by highest use case. For example, in a text notification, the highest case would be \say{dismiss}, while the next option would be \say{reply}. 
+    The most important change to the overall design of the interface is the change over to a menu type system. This means that the root level is the watch face. Hitting the Digital Crown will go into the main menu. Scrolling on this top menu will show the various different apps that you want use, for example the messaging or music apps. Hitting the back button will take you up a level in the menus. As a general principle, when there is content on the screen and scrolling lets you see more content while hitting the crown gives you the actions that can be performed in that context with that content. The actions will be sorted by highest use case. For example, in a text notification, the highest case would be \say{dismiss}, while the next option would be \say{reply}.
+
+    An important thing to note is that at any point, the digital crown can be held down to bring up Siri, which can act upon the current content or anything in the global context.
 
     \section{Examples}
     \label{examples}
+
+    \subsection{Message Notification}
+
+    Fully fleshing out the idea presented earlier, we are looking at the case of recieving a message notification.
+
+    In its natural state, Apple Watch is showing the main watchface. A message comes in and overlays over the watchface and indicates to the user that a notification has come in by firing off the Taptic Engine. Whats on the screen is something resembling the current Apple Watch, as seen in Figure \ref{fig:messages}. The dot next immediately next to the digital crown represents that there are actions that can be performed on this content. Figure \ref{fig:messages_actions} represents some of the actions that can be done on a message notification. Note that the \say{dismiss} option is currently selected. 
+
+    Within a message notifcation, the Siri context includes things like dismiss and reply, where you can immediately dictate a responce by saying something like \say{Reply \say{I'll be home soon}}.
+
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=10cm,height=8cm,keepaspectratio]{messages}
+        \caption{Messages Main Content}
+        \label{fig:messages}
+    \end{figure}
+
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=10cm,height=8cm,keepaspectratio]{messages-actions}
+        \caption{Messages Actions}
+        \label{fig:messages_actions}
+    \end{figure}
+
+    \subsection{Music App}
+
+    The Music app would be one of the apps listed in the top level menu directly beneath the watchface. You would see the song currently playing with corresponding artist and album names along with a playhead indicator and beautiful album artwork. Again, an indicator would be present next to the digital crown to indicate actions can be done on this content. The primary option would be to Play/Pause. Others would include volume and scrubbing, which would each present a vertical bar that can be manipulated with scrolling to get to the desired volume or playhead. Scrolling on the content, aka the currently playing song, would bring you to the full library. In this context, the actions that would be presented for this content would be different than that for the \say{Now Playing}. Things to change the view like sorting by artists, albums, or songs would be presented, along with the option for viewing playlsits.
+
+    Within the Music App, the Siri context includes things like playing specific songs, artists, albums, playlists, along with changing the volume or playhead. For example, saying \say{Play songs by The Killers} would make Apple Watch start playback of songs by \say{The Killers} on the default listening interface. 
+
+    \subsection{Yo App}
+    
+    Looking at a specific API, the Yo API seems the most applcable to a watch use because of its simplicity. This is something important to keep in mind with a watch application. Simplicity will mean you can get tasks done quickly and without much chance for user error.
+
+    By opening the Yo app you have indicated that you wish to send a yo, as thats the only reason you would need to open the app. As such, the menu you are immediately presented with is the list of yo users you have configured already to send to. Simply scrolling to that user you wish to send a yo to and hitting the digital crown will prompt the sending of a yo to that user. The last option at the bottom of the list of users is an add button, which brings up Siri to dictate the user you wish to add.
+
+    The Siri context within the Yo app includes performing actions like sending a yo to a specific user and adding a new user.
 
     \section{Conclusion}
     \label{conclusion}
