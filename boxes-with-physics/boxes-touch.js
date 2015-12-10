@@ -78,8 +78,8 @@
                 top: potentialTop
             });
 
-            element.velocityLeft += (acceleration.y * .02);
-            element.velocityTop += (acceleration.x * .02);
+            element.velocityLeft += (acceleration.x * .02);
+            element.velocityTop -= (acceleration.y * .02);
         }
     };
 
@@ -87,6 +87,9 @@
         jQueryElements.each(function (index, element) {
             animate(element, event.accelerationIncludingGravity);
         });
+        
+        // Don't do any touch scrolling.
+        event.preventDefault();
     };
 
     /**
