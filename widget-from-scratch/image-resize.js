@@ -12,10 +12,8 @@
 
             event.target.resizingImage.width(potentialWidth);
             event.target.resizingImage.height(potentialHeight);
-            console.log('resizing');
         }
 
-        // console.log('trackDrag');
         event.stopPropagation();
         event.preventDefault();
     };
@@ -23,7 +21,6 @@
     var endDrag = function (event) {
         event.target.isResizing = false;
 
-        console.log('endDrag');
         event.stopPropagation();
         event.preventDefault();
     };
@@ -34,7 +31,6 @@
         event.target.deltaY = jThis.offset().top;
         event.target.isResizing = true;
 
-        console.log('startDrag');
         event.stopPropagation();
         event.preventDefault();
     };
