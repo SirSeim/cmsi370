@@ -19,9 +19,10 @@ $(function() { // JD: 9
                 console.log('fill_profile success');
                 // console.log(res); // JD: 10
 
-                var html_content = '<img src="'+res.logo+'" alt="Logo" class="img-responsive">' +
+                var html_content = '<img src="'+res.logo+'" alt="Logo" class="img-responsive" id="profile">' +
                     '<h4>'+res.display_name+'</h4>'; // JD: 13, 16
                 $('.profile').html(html_content);
+                $('#profile').resizeImage();
             }
         });
     };
