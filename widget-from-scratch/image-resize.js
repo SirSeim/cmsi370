@@ -1,7 +1,4 @@
 (function ($) {
-    /**
-     * Tracks a box as it is rubberbanded or moved across the drawing area.
-     */
     var trackDrag = function (event) {
         if (event.target.isResizing) {
             var potentialWidth = (event.pageX - event.target.deltaX)*2;
