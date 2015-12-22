@@ -22,7 +22,7 @@ $(function() { // JD: 9
                 var html_content = '<img src="'+res.logo+'" alt="Logo" class="img-responsive" id="profile">' +
                     '<h4>'+res.display_name+'</h4>'; // JD: 13, 16
                 $('.profile').html(html_content);
-                $('#profile').resizeImage();
+                $('#profile').resizeImage(); // JD 1211: 5
             }
         });
     };

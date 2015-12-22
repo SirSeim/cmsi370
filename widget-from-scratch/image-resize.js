@@ -42,10 +42,10 @@
             .mouseup(endDrag)
             .each(function (index, element) {
                 element.resizingImage = $(element);
-                element.originalHeight = element.height();
-                element.originalWidth = element.width();
+                element.originalHeight = element.height(); // JD: 3
+                element.originalWidth = element.width(); // JD: 3
                 element.isResizing = false;
-            });
+            }); // JD: 4
     };
 
     $.fn.resizeImage = function () {
