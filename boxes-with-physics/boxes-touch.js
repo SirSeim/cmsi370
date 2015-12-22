@@ -48,28 +48,28 @@
         if (!element.isMoved) {
             var oldOffset = element.movingBox.offset();
 
-            var potentialLeft = oldOffset.left + (element.velocityLeft * 10);
-            var potentialTop = oldOffset.top + (element.velocityTop * 10);
+            var potentialLeft = oldOffset.left + (element.velocityLeft * 10); // JD: 2
+            var potentialTop = oldOffset.top + (element.velocityTop * 10); // JD: 2
 
             if (potentialTop + element.height > element.parentOffset.top + element.parentHeight) {
                 potentialTop = element.parentOffset.top + element.parentHeight - element.height;
-                element.velocityTop *= -.9;
-                // console.log("bottom");
+                element.velocityTop *= -.9; // JD: 2
+                // console.log("bottom"); // JD: 3
             }
             if (potentialLeft + element.width > element.parentOffset.left + element.parentWidth) {
                 potentialLeft = element.parentOffset.left + element.parentWidth - element.width;
-                element.velocityLeft *= -.9;
-                // console.log("right");
+                element.velocityLeft *= -.9; // JD: 2
+                // console.log("right"); // JD: 3
             }
             if (potentialTop < element.parentOffset.top) {
                 potentialTop = element.parentOffset.top;
-                element.velocityTop *= -.9;
-                // console.log("top");
+                element.velocityTop *= -.9; // JD: 2
+                // console.log("top"); // JD: 3
             }
             if (potentialLeft < element.parentOffset.left) {
                 potentialLeft = element.parentOffset.left;
-                element.velocityLeft *= -.9;
-                // console.log("left");
+                element.velocityLeft *= -.9; // JD: 2
+                // console.log("left"); // JD: 3
             }
 
             // Reposition the object.
@@ -78,8 +78,8 @@
                 top: potentialTop
             });
 
-            element.velocityLeft += (acceleration.x * .02);
-            element.velocityTop -= (acceleration.y * .02);
+            element.velocityLeft += (acceleration.x * .02); // JD: 2
+            element.velocityTop -= (acceleration.y * .02); // JD: 2
         }
     };
 
@@ -100,7 +100,7 @@
             if (touch.target.movingBox) {
                 // Change state to "not-moving-anything" by clearing out
                 // touch.target.movingBox.
-                // touch.target.movingBox = null;
+                // touch.target.movingBox = null; // JD: 3
                 touch.target.isMoved = false;
             }
         });
@@ -127,17 +127,17 @@
 
             // Set the drawing area's state to indicate that it is
             // in the middle of a move.
-            // touch.target.movingBox = jThis;
+            // touch.target.movingBox = jThis; // JD: 3
             touch.target.deltaX = touch.pageX - startOffset.left;
             touch.target.deltaY = touch.pageY - startOffset.top;
             touch.target.height = jThis.height();
             touch.target.width = jThis.width();
             touch.target.isMoved = true;
 
-            // touch.target.parentHeight = $(touch.target).parent().height();
-            // touch.target.parentWidth = $(touch.target).parent().width();
-            // touch.target.parentOffset = $(touch.target).parent().offset();
-            // console.log(touch.target.velocityTop);
+            // touch.target.parentHeight = $(touch.target).parent().height(); // JD: 3
+            // touch.target.parentWidth = $(touch.target).parent().width(); // JD: 3
+            // touch.target.parentOffset = $(touch.target).parent().offset(); // JD: 3
+            // console.log(touch.target.velocityTop); // JD: 3
         });
 
         // Eat up the event so that the drawing area does not
@@ -177,9 +177,9 @@
                 element.width = $(element).width();
             });
         window.addEventListener("devicemotion", function (event) {
-            // console.log(jQueryElements);
-            // console.log("hey");
-            animateAll(event, jQueryElements.find("div.box"));
+            // console.log(jQueryElements); // JD: 3
+            // console.log("hey"); // JD: 3
+            animateAll(event, jQueryElements.find("div.box")); // JD: 4
         }, true);
     };
 
